@@ -1,4 +1,6 @@
-﻿namespace LD40 {
+﻿using UnityEngine;
+
+namespace LD40 {
 	[System.Serializable]
 	public class IceSpikeSpell : Spell {
 
@@ -6,10 +8,14 @@
 			return SpellType.IceSpike;
 		}
 
-		public override void Fire() {
-			Projectile projectile = ProjectileManager.I.CreateProjectile(ProjectileType.IceSpike);
-			AddProjectile(projectile);
+		public override void InitFactories() {
+			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.IceSpike);
+			projectile.heading = Vector3.forward;
+			AddFactory(projectile);
 		}
 
+		public override void Fire() {
+			
+		}
 	}
 }

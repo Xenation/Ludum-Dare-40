@@ -12,7 +12,7 @@ namespace LD40 {
 		}
 
 		protected override void UpdateAI() {
-			if (seesTarget) {
+			if (SeesTarget) {
 				agent.SetDestination(lastTargetPosition);
 			} else if (agent.remainingDistance <= agent.stoppingDistance) {
 				agent.SetDestination(points[0]);

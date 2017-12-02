@@ -8,30 +8,32 @@ namespace LD40 {
 		public float stopRange;
 
 		protected NavMeshAgent agent;
-		protected Caster target;
+		public Caster Target { get; protected set; }
 		protected Vector3 lastTargetPosition;
-		protected bool seesTarget = false;
+		public bool SeesTarget { get; protected set; }
 
 		private void Start() {
+			SeesTarget = false;
 			agent = GetComponent<NavMeshAgent>();
 			agent.stoppingDistance = stopRange;
-			target = EntitiesManager.I.player;
+			Target = EntitiesManager.I.player;
 			InitAI();
 		}
 
 		public void Update() {
 			RaycastHit hit;
-			if (Physics.Raycast(transform.position, (target.transform.position - transform.position).normalized, out hit, range, 1 << LayerMask.NameToLayer("Player"))) {
-				lastTargetPosition = target.transform.position;
-				if (!seesTarget) {
-					seesTarget = true;
+			if (Physics.Raycast(transform.position, (Target.transform.position - transform.position).normalized, out hit, range, 1 << LayerMask.NameToLayer("Player"))) {
+				lastTargetPosition = Target.transform.position;
+				if (!SeesTarget) {
+					SeesTarget = true;
 					TargetSeen();
 				}
-			} else if (seesTarget) {
-				seesTarget = false;
+			} else if (SeesTarget) {
+				SeesTarget = false;
 				TargetLost();
 			}
-			UpdateAI();
+			//UpdateAI();
+			SendMessage("UpdateAI");
 		}
 
 		protected abstract void InitAI();

@@ -8,7 +8,7 @@ namespace LD40 {
 		}
 
 		protected override void UpdateAI() {
-			if (seesTarget) {
+			if (SeesTarget) {
 				agent.SetDestination(lastTargetPosition);
 			}
 		}

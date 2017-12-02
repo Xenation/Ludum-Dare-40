@@ -24,7 +24,7 @@ namespace LD40 {
 			if (selectedSpell == null) return;
 			if (lastShotTimes[selectedSpell.type] + selectedSpell.cooldown > Time.time) return;
 			lastShotTimes[selectedSpell.type] = Time.time;
-			selectedSpell.Fire();
+			selectedSpell.Fire2();
 		}
 
 		public void SelectSpell(Spell spell) {

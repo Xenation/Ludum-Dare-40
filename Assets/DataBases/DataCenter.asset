@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a15f200b245acd419160d790fb837c1, type: 3}
+  m_Name: DataCenter
+  m_EditorClassIdentifier: 
+  playerSpells: {fileID: 11400000, guid: 2f5658e62f15a5744809635e23c17f1d, type: 2}
+  projectiles: {fileID: 11400000, guid: a2df2fbd45f2b864590827fe3ce1bcd8, type: 2}

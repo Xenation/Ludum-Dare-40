@@ -3,7 +3,8 @@
 namespace LD40 {
 	public enum ProjectileType {
 		Fireball,
-		IceSpike
+		IceSpike,
+		Arrow
 	}
 
 	[AddComponentMenu("_LD40/Projectile")]
@@ -34,6 +35,11 @@ namespace LD40 {
 
 		protected void FixedUpdate() {
 			rb.velocity = GetVelocity();
+			UpdatePhysics();
+		}
+
+		protected virtual void UpdatePhysics() {
+
 		}
 
 		protected virtual Vector3 GetVelocity() {

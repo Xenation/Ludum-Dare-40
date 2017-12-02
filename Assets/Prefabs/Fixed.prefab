@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33527444395243176}
   - component: {fileID: 65079724080195328}
   - component: {fileID: 23759435618410298}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33082207264568426}
   - component: {fileID: 136002903847735612}
   - component: {fileID: 23109533351891816}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,8 +59,9 @@ GameObject:
   - component: {fileID: 136160024249871880}
   - component: {fileID: 23844599902902948}
   - component: {fileID: 195691683212679160}
-  - component: {fileID: 114899012944884998}
-  m_Layer: 0
+  - component: {fileID: 114282012498968966}
+  - component: {fileID: 114901573042578830}
+  m_Layer: 12
   m_Name: Fixed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669803900932922}
   m_LocalRotation: {x: -0, y: 0.98151445, z: -0, w: 0.19138817}
-  m_LocalPosition: {x: 16.15, y: 1, z: 6.31}
+  m_LocalPosition: {x: -19.65, y: 1, z: 9.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4890430594789788}
@@ -237,7 +238,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114899012944884998
+--- !u!114 &114282012498968966
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -245,19 +246,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1669803900932922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b260815423c9bb44836b7f4bb64a380, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d9e14d2f3648da408ecdda57562a80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
+  range: 20
   stopRange: 2
-  points:
-  - {x: 19.402534, y: 0, z: -6.1070185}
-  - {x: 14.358067, y: 0, z: -1.1260757}
-  - {x: 8.778206, y: 0, z: -6.698457}
-  - {x: 10.014094, y: 0, z: -13.556502}
-  - {x: 17.4655, y: 0, z: -18.252804}
-  patrolStopRange: 0.1
-  waitTime: 2
+--- !u!114 &114901573042578830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669803900932922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d6035fdb1cd06741970ef3990eaae0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileFactory:
+    heading: {x: 0, y: 0, z: 1}
+    speed: 25
+    dieOnCollision: 1
+    lifeTime: 3
+    prefab: {fileID: 1295211380171384, guid: 9dc67a126cd28ae479ddc23b9e44450e, type: 2}
+  cooldown: 1
 --- !u!136 &136002903847735612
 CapsuleCollider:
   m_ObjectHideFlags: 1

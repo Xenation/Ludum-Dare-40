@@ -8,8 +8,8 @@ namespace LD40 {
 		}
 
 		protected override void UpdateAI() {
-			if (seesTarget) {
-				transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
+			if (SeesTarget) {
+				transform.LookAt(new Vector3(Target.transform.position.x, transform.position.y, Target.transform.position.z));
 			}
 		}
 

@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ProjectileFactory
   layers:
   - Default
   - TransparentFX
@@ -15,10 +16,10 @@ TagManager:
   - 
   - Ground
   - Decor
-  - Projectile
+  - PlayerProjectile
   - Player
   - Enemy
-  - 
+  - EnemyProjectile
   - 
   - 
   - 

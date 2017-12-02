@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33527444395243176}
   - component: {fileID: 65079724080195328}
   - component: {fileID: 23759435618410298}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33082207264568426}
   - component: {fileID: 136002903847735612}
   - component: {fileID: 23109533351891816}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 23844599902902948}
   - component: {fileID: 195691683212679160}
   - component: {fileID: 114233480909930510}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b01b445faa810d45b44ebd2b798cf0c, type: 3}
+  m_Name: Projectiles
+  m_EditorClassIdentifier: 
+  fireballFactory:
+    heading: {x: 0, y: 0, z: 1}
+    speed: 20
+    dieOnCollision: 1
+    lifeTime: 3
+    prefab: {fileID: 1867637130014530, guid: f2cdc771c052a9a4583500b15c621bc6, type: 2}
+  iceSpikeFactory:
+    heading: {x: 0, y: 0, z: 1}
+    speed: 15
+    dieOnCollision: 1
+    lifeTime: 3
+    prefab: {fileID: 1867637130014530, guid: 34dcfc1d93d29654e8b65a195c91141c, type: 2}
+  arrowFactory:
+    heading: {x: 0, y: 0, z: 1}
+    speed: 25
+    dieOnCollision: 1
+    lifeTime: 4
+    prefab: {fileID: 1295211380171384, guid: 9dc67a126cd28ae479ddc23b9e44450e, type: 2}
