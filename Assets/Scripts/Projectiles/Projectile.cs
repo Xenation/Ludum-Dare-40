@@ -13,6 +13,9 @@ namespace LD40 {
 		public bool dieOnCollision;
 		public float lifeTime;
 
+		public delegate void OnDeath();
+		public event OnDeath OnDeathEvent;
+
 		private Rigidbody rb;
 
 		private float creationTime;
@@ -24,7 +27,7 @@ namespace LD40 {
 
 		private void Update() {
 			if (creationTime + lifeTime <= Time.time) {
-				Destroy(gameObject);
+				Die();
 			}
 		}
 
@@ -38,8 +41,15 @@ namespace LD40 {
 
 		private void OnCollisionEnter(Collision collision) {
 			if (dieOnCollision) {
-				Destroy(gameObject);
+				Die();
 			}
+		}
+
+		private void Die() {
+			if (OnDeathEvent != null) {
+				OnDeathEvent.Invoke();
+			}
+			Destroy(gameObject);
 		}
 
 	}

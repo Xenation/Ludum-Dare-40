@@ -49,7 +49,6 @@ namespace LD40 {
 				float distance;
 				playerPlane.Raycast(ray, out distance);
 				target = ray.origin + ray.direction * distance;
-				Debug.Log(target);
 			}
 			transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
 
