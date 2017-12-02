@@ -53,3 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballProjPrefab: {fileID: 1867637130014530, guid: f2cdc771c052a9a4583500b15c621bc6,
     type: 2}
+  iceSpikePrefab: {fileID: 1867637130014530, guid: 34dcfc1d93d29654e8b65a195c91141c,
+    type: 2}

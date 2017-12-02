@@ -27,5 +27,9 @@ namespace LD40 {
 			selectedSpell.Fire();
 		}
 
+		public void SelectSpell(Spell spell) {
+			selectedSpell = spell;
+		}
+
 	}
 }

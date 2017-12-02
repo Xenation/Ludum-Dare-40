@@ -9,7 +9,6 @@ namespace LD40 {
 		public float speed = 5f;
 		public float maxSlope = 45f;
 		public float gravity = -5f;
-		public SpellType spellType;
 
 		private Rigidbody rb;
 		private Vector3 vel = Vector3.zero;
@@ -22,7 +21,7 @@ namespace LD40 {
 
 		private void Start() {
 			rb = GetComponent<Rigidbody>();
-			selectedSpell = Spell.GetSpell(spellType, this);
+			SelectSpell(Spell.GetSpell(SpellType.Fireball, this));
 		}
 
 		private void Update() {
@@ -53,6 +52,13 @@ namespace LD40 {
 			transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
 
 			// Actions
+			if (Input.GetButton("Select Spell 1")) {
+				SelectSpell(Spell.GetSpell(SpellType.Fireball, this));
+			}
+			if (Input.GetButton("Select Spell 2")) {
+				SelectSpell(Spell.GetSpell(SpellType.IceSpike, this));
+			}
+
 			if (Input.GetButton("Fire1")) {
 				selectedSpell.target = target;
 				FireSpell();

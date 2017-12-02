@@ -3,6 +3,7 @@
 namespace LD40 {
 	public enum ProjectileType {
 		Fireball,
+		IceSpike
 	}
 
 	[AddComponentMenu("_LD40/Projectile")]

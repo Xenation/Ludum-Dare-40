@@ -4,6 +4,7 @@ using UnityEngine;
 namespace LD40 {
 	public enum SpellType {
 		Fireball,
+		IceSpike
 	}
 
 	[System.Serializable]
@@ -14,6 +15,12 @@ namespace LD40 {
 		public Caster caster;
 		public List<Projectile> projectiles;
 		public Vector3 target;
+
+		public Spell() {
+			type = GetSpellType();
+		}
+
+		public abstract SpellType GetSpellType();
 
 		public abstract void Fire();
 
@@ -27,9 +34,14 @@ namespace LD40 {
 		}
 
 		public static Spell GetSpell(SpellType type, Caster caster) {
+			Spell spell;
 			switch (type) {
 				case SpellType.Fireball:
-					Spell spell = DataManager.I.playerSpells.fireballSpell;
+					spell = DataManager.I.playerSpells.fireballSpell;
+					spell.caster = caster;
+					return spell;
+				case SpellType.IceSpike:
+					spell = DataManager.I.playerSpells.iceSpikeSpell;
 					spell.caster = caster;
 					return spell;
 				default:

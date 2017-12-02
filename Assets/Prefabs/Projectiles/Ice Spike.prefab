@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 114918558611037166}
   - component: {fileID: 54811981241734762}
   m_Layer: 10
-  m_Name: Fireball
+  m_Name: Ice Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1867637130014530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.66, z: 3.61}
+  m_LocalPosition: {x: 0.4115483, y: 2.29, z: 3.8294325}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4891708171549260}
@@ -149,7 +149,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7ee87b8602ec3cd47b4f226675760659, type: 2}
+  - {fileID: 2100000, guid: e8906b4cf55195b4094bfb95bb9103df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heading: {x: 0, y: 0, z: 0}
-  speed: 15
+  speed: 20
   dieOnCollision: 1
   lifeTime: 3
 --- !u!114 &114949358113373896
@@ -1189,8 +1189,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.7655173, b: 0, a: 1}
-        key1: {r: 0.62, g: 0.30768675, b: 0.15314, a: 1}
+        key0: {r: 0, g: 0.95862055, b: 1, a: 1}
+        key1: {r: 0.15314002, g: 0.36886156, b: 0.62, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1198,7 +1198,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 25443
+        ctime1: 25636
         ctime2: 0
         ctime3: 0
         ctime4: 0
@@ -4451,8 +4451,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.75, g: 0.6982758, b: 0, a: 1}
-        key1: {r: 0.7352941, g: 0.25862068, b: 0, a: 1}
+        key0: {r: 0, g: 1, b: 0.9172416, a: 1}
+        key1: {r: 0, g: 0.24847879, b: 0.7352941, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4460,7 +4460,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 11180
+        ctime1: 39514
         ctime2: 0
         ctime3: 0
         ctime4: 0

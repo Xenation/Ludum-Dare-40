@@ -4,8 +4,8 @@ namespace LD40 {
 	[System.Serializable]
 	public class FireballSpell : Spell {
 
-		public FireballSpell() {
-			type = SpellType.Fireball;
+		public override SpellType GetSpellType() {
+			return SpellType.Fireball;
 		}
 
 		public override void Fire() {

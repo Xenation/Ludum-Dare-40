@@ -5,6 +5,7 @@ namespace LD40 {
 	public class SpellsData : ScriptableObject {
 
 		public FireballSpell fireballSpell;
+		public IceSpikeSpell iceSpikeSpell;
 
 	}
 }
