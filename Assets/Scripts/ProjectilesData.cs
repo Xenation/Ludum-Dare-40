@@ -29,9 +29,13 @@ namespace LD40 {
 			}
 		}
 
-		public ProjectileFactory CreateFactory(ProjectileType type) {
+		public ProjectileFactory CreateFactory(ProjectileType type, int instability) {
 			foreach (ProjectileFactory fact in factories) {
-				if (fact.type == type) return fact.Copy();
+				if (fact.type == type) {
+					ProjectileFactory copy = fact.Copy();
+					copy.instability = instability;
+					return copy;
+				}
 			}
 			return null;
 		}

@@ -12,7 +12,7 @@ namespace LD40 {
 
 		public void Start() {
 			enemy = GetComponent<Enemy>();
-			projectileFactory = ProjectileFactory.CreateFactory(ProjectileType.Arrow);
+			projectileFactory = ProjectileFactory.CreateFactory(ProjectileType.Arrow, 0);
 		}
 
 		private void UpdateAI() {

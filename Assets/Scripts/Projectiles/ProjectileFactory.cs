@@ -11,6 +11,7 @@ namespace LD40 {
 		public bool hasLifeTime;
 		public float lifeTime;
 		public GameObject prefab;
+		public int instability;
 
 		public ProjectileFactory(Vector3 heading, float speed, bool dieOnCollision, bool hasLifeTime, float lifeTime, GameObject prefab) {
 			this.heading = heading;
@@ -31,6 +32,7 @@ namespace LD40 {
 			proj.dieOnCollision = dieOnCollision;
 			proj.hasLifeTime = hasLifeTime;
 			proj.lifeTime = lifeTime;
+			proj.instability = instability;
 			return proj;
 		}
 
@@ -38,8 +40,8 @@ namespace LD40 {
 			return new ProjectileFactory(heading, speed, dieOnCollision, hasLifeTime, lifeTime, prefab);
 		}
 
-		public static ProjectileFactory CreateFactory(ProjectileType type) {
-			return DataCenter.I.projectiles.CreateFactory(type);
+		public static ProjectileFactory CreateFactory(ProjectileType type, int instab) {
+			return DataCenter.I.projectiles.CreateFactory(type, instab);
 			//switch (type) {
 			//	case ProjectileType.Fireball:
 			//		return DataCenter.I.projectiles.fireballFactory.Copy();

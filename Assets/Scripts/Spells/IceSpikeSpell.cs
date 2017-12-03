@@ -9,7 +9,7 @@ namespace LD40 {
 		}
 
 		public override void InitFactories() {
-			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.IceSpike);
+			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.IceSpike, Instability);
 			projectile.heading = Vector3.forward;
 			AddFactory(projectile);
 		}

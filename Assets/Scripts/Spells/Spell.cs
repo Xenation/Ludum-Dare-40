@@ -14,21 +14,35 @@ namespace LD40 {
 	public abstract class Spell {
 
 		public SpellType type;
-		public float cooldown;
+		[SerializeField]
+		private float cooldown;
 		public bool isToggle = false;
 		[HideInInspector]
-		public Caster caster;
-		[HideInInspector]
-		public List<ProjectileFactory> projectileFactories;
-		[HideInInspector]
 		public Vector3 target;
-		[HideInInspector]
-		public Vector3 mainHeading;
+
+		protected Caster caster;
+		private List<ProjectileFactory> projectileFactories;
+		protected Vector3 mainHeading;
 
 		public bool IsActive { get; private set; }
 		protected float activationTime;
+		public float Cooldown { get; protected set; }
+
+		[SerializeField]
+		private int _instability = 0;
+		public int Instability {
+			get {
+				return _instability;
+			}
+			set {
+				_instability = value;
+				ClearFactories();
+				InitFactories();
+			}
+		}
 
 		public Spell() {
+			Cooldown = cooldown;
 			type = GetSpellType();
 		}
 
@@ -55,7 +69,10 @@ namespace LD40 {
 		public virtual void OnActivate() { }
 		public virtual void OnDeactivate() { }
 
+		public virtual void OnPreFire() { }
+
 		public virtual void Fire() {
+			OnPreFire();
 			InstantiateProjectiles(caster.transform.position, mainHeading);
 		}
 

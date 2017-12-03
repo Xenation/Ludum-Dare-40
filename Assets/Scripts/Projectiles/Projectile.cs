@@ -19,6 +19,7 @@ namespace LD40 {
 		public bool dieOnCollision;
 		public bool hasLifeTime;
 		public float lifeTime;
+		public int instability = 0;
 
 		public delegate void OnDeath();
 		public event OnDeath OnDeathEvent;
@@ -26,6 +27,7 @@ namespace LD40 {
 		protected Rigidbody rb;
 
 		protected float creationTime;
+		protected float distanceTravelled = 0;
 
 		private void Start() {
 			rb = GetComponent<Rigidbody>();
@@ -42,7 +44,9 @@ namespace LD40 {
 		}
 
 		protected void FixedUpdate() {
-			rb.velocity = GetVelocity();
+			Vector3 vel = GetVelocity();
+			rb.velocity = vel;
+			distanceTravelled += vel.magnitude * Time.fixedDeltaTime;
 			UpdatePhysics();
 		}
 

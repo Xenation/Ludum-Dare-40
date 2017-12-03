@@ -14,7 +14,7 @@ namespace LD40 {
 		}
 
 		public override void InitFactories() {
-			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.Beam);
+			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.Beam, Instability);
 			projectile.heading = Vector3.forward;
 			AddFactory(projectile);
 		}

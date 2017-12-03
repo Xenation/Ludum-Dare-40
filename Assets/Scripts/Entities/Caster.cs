@@ -32,14 +32,14 @@ namespace LD40 {
 
 		public void FireSpell() {
 			if (SelectedSpell == null) return;
-			if (lastShotTimes[SelectedSpell.type] + SelectedSpell.cooldown > Time.time) return;
+			if (lastShotTimes[SelectedSpell.type] + SelectedSpell.Cooldown > Time.time) return;
 			lastShotTimes[SelectedSpell.type] = Time.time;
 			SelectedSpell.Fire();
 		}
 
 		public void StartFiring() {
 			isFiring = true;
-			if (SelectedSpell.isToggle && lastShotTimes[SelectedSpell.type] + SelectedSpell.cooldown <= Time.time) {
+			if (SelectedSpell.isToggle && lastShotTimes[SelectedSpell.type] + SelectedSpell.Cooldown <= Time.time) {
 				lastShotTimes[SelectedSpell.type] = Time.time;
 				SelectedSpell.Activate();
 			}
