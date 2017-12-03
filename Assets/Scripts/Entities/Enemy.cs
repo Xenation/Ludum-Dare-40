@@ -2,8 +2,8 @@
 using UnityEngine.AI;
 
 namespace LD40 {
-	public abstract class Enemy : MonoBehaviour {
-
+	public abstract class Enemy : LivingEntity {
+		
 		public float range;
 		public float stopRange;
 
@@ -34,6 +34,12 @@ namespace LD40 {
 			}
 			//UpdateAI();
 			SendMessage("UpdateAI");
+		}
+
+		protected override void Die() {
+			TriggerDeathEvent();
+			// TODO take in account a delay for anim
+			Destroy(gameObject);
 		}
 
 		protected abstract void InitAI();

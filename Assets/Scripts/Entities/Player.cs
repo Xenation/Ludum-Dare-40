@@ -24,6 +24,12 @@ namespace LD40 {
 			SelectSpell(Spell.GetSpell(SpellType.Fireball, this));
 		}
 
+		protected override void Die() {
+			TriggerDeathEvent();
+			// TODO take in account Gameover and anim
+			Destroy(gameObject);
+		}
+
 		private void Update() {
 			// Movement
 			if (!isGrounded) {

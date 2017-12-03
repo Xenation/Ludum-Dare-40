@@ -7,9 +7,10 @@ namespace LD40 {
 		Arrow
 	}
 
-	[AddComponentMenu("_LD40/Projectile")]
-	public class Projectile : MonoBehaviour {
+	[HideInInspector]
+	public abstract class Projectile : MonoBehaviour {
 
+		public float damage = 1f;
 		public Vector3 heading;
 		public float speed;
 		public bool dieOnCollision;
@@ -25,7 +26,10 @@ namespace LD40 {
 		private void Start() {
 			rb = GetComponent<Rigidbody>();
 			creationTime = Time.time;
+			Init();
 		}
+
+		protected abstract void Init();
 
 		private void Update() {
 			if (creationTime + lifeTime <= Time.time) {
@@ -38,19 +42,20 @@ namespace LD40 {
 			UpdatePhysics();
 		}
 
-		protected virtual void UpdatePhysics() {
-
-		}
-
-		protected virtual Vector3 GetVelocity() {
-			return Vector3.zero;
-		}
+		protected abstract Vector3 GetVelocity();
+		protected abstract void UpdatePhysics();
 
 		private void OnCollisionEnter(Collision collision) {
+			LivingEntity entity = collision.gameObject.GetComponent<LivingEntity>();
+			if (entity != null) {
+				InflictDamage(entity);
+			}
 			if (dieOnCollision) {
 				Die();
 			}
 		}
+
+		protected abstract void InflictDamage(LivingEntity entity);
 
 		private void Die() {
 			if (OnDeathEvent != null) {
@@ -58,6 +63,8 @@ namespace LD40 {
 			}
 			Destroy(gameObject);
 		}
+
+		protected abstract void OnPreDeath();
 
 	}
 }

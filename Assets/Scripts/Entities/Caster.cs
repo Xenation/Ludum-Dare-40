@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LD40 {
 	[HideInInspector]
-	public class Caster : MonoBehaviour {
+	public abstract class Caster : LivingEntity {
 
 		public Spell selectedSpell;
 
