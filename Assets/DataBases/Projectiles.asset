@@ -12,20 +12,50 @@ MonoBehaviour:
   m_Name: Projectiles
   m_EditorClassIdentifier: 
   fireballFactory:
-    heading: {x: 0, y: 0, z: 1}
+    type: 0
+    heading: {x: 0.7071068, y: 0, z: 0.7071067}
     speed: 20
     dieOnCollision: 1
+    hasLifeTime: 1
     lifeTime: 3
     prefab: {fileID: 1867637130014530, guid: f2cdc771c052a9a4583500b15c621bc6, type: 2}
   iceSpikeFactory:
+    type: 1
     heading: {x: 0, y: 0, z: 1}
     speed: 15
     dieOnCollision: 1
+    hasLifeTime: 1
     lifeTime: 3
     prefab: {fileID: 1867637130014530, guid: 34dcfc1d93d29654e8b65a195c91141c, type: 2}
   arrowFactory:
+    type: 2
     heading: {x: 0, y: 0, z: 1}
     speed: 25
     dieOnCollision: 1
+    hasLifeTime: 1
     lifeTime: 4
     prefab: {fileID: 1295211380171384, guid: 9dc67a126cd28ae479ddc23b9e44450e, type: 2}
+  tornadoFactory:
+    type: 3
+    heading: {x: 0, y: 0, z: 1}
+    speed: 10
+    dieOnCollision: 1
+    hasLifeTime: 1
+    lifeTime: 10
+    prefab: {fileID: 1938843947012796, guid: ffce64f6c0e005c4484d023bfb49483c, type: 2}
+  electricArcFactory:
+    type: 4
+    heading: {x: 0, y: 0, z: 1}
+    speed: 0
+    dieOnCollision: 1
+    hasLifeTime: 1
+    lifeTime: 0.5
+    prefab: {fileID: 1815289019804130, guid: 295c62fb1919d484ca82fea1796af29c, type: 2}
+  beamFactory:
+    type: 5
+    heading: {x: 0, y: 0, z: 1}
+    speed: 0
+    dieOnCollision: 0
+    hasLifeTime: 0
+    lifeTime: 3
+    prefab: {fileID: 1693756823122010, guid: 8056ebe56be661b409ecad8128b63d2d, type: 2}

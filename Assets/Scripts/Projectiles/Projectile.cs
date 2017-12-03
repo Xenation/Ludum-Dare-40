@@ -4,7 +4,10 @@ namespace LD40 {
 	public enum ProjectileType {
 		Fireball,
 		IceSpike,
-		Arrow
+		Arrow,
+		Tornado,
+		ElectricArc,
+		Beam
 	}
 
 	[HideInInspector]
@@ -14,14 +17,15 @@ namespace LD40 {
 		public Vector3 heading;
 		public float speed;
 		public bool dieOnCollision;
+		public bool hasLifeTime;
 		public float lifeTime;
 
 		public delegate void OnDeath();
 		public event OnDeath OnDeathEvent;
 
-		private Rigidbody rb;
+		protected Rigidbody rb;
 
-		private float creationTime;
+		protected float creationTime;
 
 		private void Start() {
 			rb = GetComponent<Rigidbody>();
@@ -32,7 +36,7 @@ namespace LD40 {
 		protected abstract void Init();
 
 		private void Update() {
-			if (creationTime + lifeTime <= Time.time) {
+			if (hasLifeTime && creationTime + lifeTime <= Time.time) {
 				Die();
 			}
 		}
@@ -57,7 +61,12 @@ namespace LD40 {
 
 		protected abstract void InflictDamage(LivingEntity entity);
 
-		private void Die() {
+		public void Kill() {
+			Die();
+		}
+
+		protected void Die() {
+			OnPreDeath();
 			if (OnDeathEvent != null) {
 				OnDeathEvent.Invoke();
 			}

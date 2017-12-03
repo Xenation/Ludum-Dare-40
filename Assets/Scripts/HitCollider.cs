@@ -7,10 +7,7 @@ namespace LD40 {
 		public bool HasEntitiesInside { get; private set; }
 		public List<LivingEntity> EntitiesInside { get; private set; }
 
-		private Collider col;
-
 		public void Start() {
-			col = GetComponent<Collider>();
 			EntitiesInside = new List<LivingEntity>();
 		}
 

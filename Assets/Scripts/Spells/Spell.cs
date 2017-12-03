@@ -4,7 +4,10 @@ using UnityEngine;
 namespace LD40 {
 	public enum SpellType {
 		Fireball,
-		IceSpike
+		IceSpike,
+		Tornado,
+		ElectricArc,
+		Beam
 	}
 
 	[System.Serializable]
@@ -12,9 +15,18 @@ namespace LD40 {
 
 		public SpellType type;
 		public float cooldown;
+		public bool isToggle = false;
+		[HideInInspector]
 		public Caster caster;
+		[HideInInspector]
 		public List<ProjectileFactory> projectileFactories;
+		[HideInInspector]
 		public Vector3 target;
+		[HideInInspector]
+		public Vector3 mainHeading;
+
+		public bool IsActive { get; private set; }
+		protected float activationTime;
 
 		public Spell() {
 			type = GetSpellType();
@@ -27,10 +39,28 @@ namespace LD40 {
 			projectileFactories.Clear();
 		}
 
-		public abstract void Fire();
+		public void Activate() {
+			IsActive = true;
+			mainHeading = (target - caster.transform.position).normalized;
+			activationTime = Time.time;
+			OnActivate();
+		}
 
-		public void Fire2() {
-			InstantiateProjectiles(caster.transform.position, (target - caster.transform.position).normalized);
+		public void Deactivate() {
+			IsActive = false;
+			mainHeading = (target - caster.transform.position).normalized;
+			OnDeactivate();
+		}
+
+		public virtual void OnActivate() { }
+		public virtual void OnDeactivate() { }
+
+		public virtual void Fire() {
+			InstantiateProjectiles(caster.transform.position, mainHeading);
+		}
+
+		public virtual void Update() {
+			mainHeading = (target - caster.transform.position).normalized;
 		}
 
 		public void AddFactory(ProjectileFactory proj) {
@@ -40,32 +70,22 @@ namespace LD40 {
 			projectileFactories.Add(proj);
 		}
 
-		public List<Projectile> InstantiateProjectiles(Vector3 position, Vector3 heading) {
-			List<Projectile> instantiated = new List<Projectile>();
+		public Dictionary<ProjectileFactory, Projectile> InstantiateProjectiles(Vector3 position, Vector3 heading) {
+			Dictionary<ProjectileFactory, Projectile> instantiated = new Dictionary<ProjectileFactory, Projectile>();
 			foreach (ProjectileFactory fact in projectileFactories) {
 				Projectile inst = fact.CreateInstance();
 				Vector3 relativeHeading = Quaternion.FromToRotation(Vector3.forward, fact.heading) * heading;
 				inst.heading = relativeHeading;
 				inst.transform.position = position + inst.heading;
-				instantiated.Add(inst);
+				instantiated.Add(fact, inst);
 			}
 			return instantiated;
 		}
 
 		public static Spell GetSpell(SpellType type, Caster caster) {
-			Spell spell;
-			switch (type) {
-				case SpellType.Fireball:
-					spell = DataCenter.I.playerSpells.fireballSpell;
-					spell.caster = caster;
-					return spell;
-				case SpellType.IceSpike:
-					spell = DataCenter.I.playerSpells.iceSpikeSpell;
-					spell.caster = caster;
-					return spell;
-				default:
-					return null;
-			}
+			Spell spell = DataCenter.I.playerSpells.GetSpell(type);
+			spell.caster = caster;
+			return spell;
 		}
 
 	}

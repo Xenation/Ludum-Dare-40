@@ -3,14 +3,16 @@
 namespace LD40 {
 	public class RangedShooter : MonoBehaviour {
 
-		public ProjectileFactory projectileFactory;
 		public float cooldown;
 
 		private Enemy enemy;
 		private float lastShotTime;
 
+		private ProjectileFactory projectileFactory;
+
 		public void Start() {
 			enemy = GetComponent<Enemy>();
+			projectileFactory = ProjectileFactory.CreateFactory(ProjectileType.Arrow);
 		}
 
 		private void UpdateAI() {

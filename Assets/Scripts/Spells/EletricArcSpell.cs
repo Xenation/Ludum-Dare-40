@@ -2,14 +2,14 @@
 
 namespace LD40 {
 	[System.Serializable]
-	public class IceSpikeSpell : Spell {
+	public class EletricArcSpell : Spell {
 
 		public override SpellType GetSpellType() {
-			return SpellType.IceSpike;
+			return SpellType.ElectricArc;
 		}
 
 		public override void InitFactories() {
-			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.IceSpike);
+			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.ElectricArc);
 			projectile.heading = Vector3.forward;
 			AddFactory(projectile);
 		}

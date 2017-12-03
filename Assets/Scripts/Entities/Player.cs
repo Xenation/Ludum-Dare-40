@@ -30,7 +30,7 @@ namespace LD40 {
 			Destroy(gameObject);
 		}
 
-		private void Update() {
+		protected override void PerformUpdate() {
 			// Movement
 			if (!isGrounded) {
 				horizTangent = Vector3.right;
@@ -64,10 +64,28 @@ namespace LD40 {
 			if (Input.GetButton("Select Spell 2")) {
 				SelectSpell(Spell.GetSpell(SpellType.IceSpike, this));
 			}
+			if (Input.GetButton("Select Spell 3")) {
+				SelectSpell(Spell.GetSpell(SpellType.Tornado, this));
+			}
+			if (Input.GetButton("Select Spell 4")) {
+				SelectSpell(Spell.GetSpell(SpellType.ElectricArc, this));
+			}
+			if (Input.GetButton("Select Spell 5")) {
+				SelectSpell(Spell.GetSpell(SpellType.Beam, this));
+			}
 
+			if (Input.GetButtonDown("Fire1")) {
+				StartFiring();
+			}
 			if (Input.GetButton("Fire1")) {
-				selectedSpell.target = target;
-				FireSpell();
+				SelectedSpell.target = target;
+			}
+			if (Input.GetButtonUp("Fire1")) {
+				StopFiring();
+			}
+
+			if (Input.GetKeyDown("space")) {
+				Time.timeScale = 0.001f;
 			}
 		}
 

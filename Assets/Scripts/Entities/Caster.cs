@@ -5,9 +5,12 @@ namespace LD40 {
 	[HideInInspector]
 	public abstract class Caster : LivingEntity {
 
-		public Spell selectedSpell;
+		public Spell SelectedSpell { get; private set; }
 
 		public Dictionary<SpellType, float> lastShotTimes;
+		private Dictionary<SpellType, bool> activeSpells;
+
+		private bool isFiring = false;
 
 		public Caster() {
 			InitShotTimes();
@@ -20,16 +23,51 @@ namespace LD40 {
 			}
 		}
 
+		public void InitActiveSpells() {
+			activeSpells = new Dictionary<SpellType, bool>();
+			foreach (SpellType type in System.Enum.GetValues(typeof(SpellType))) {
+				activeSpells.Add(type, false);
+			}
+		}
+
 		public void FireSpell() {
-			if (selectedSpell == null) return;
-			if (lastShotTimes[selectedSpell.type] + selectedSpell.cooldown > Time.time) return;
-			lastShotTimes[selectedSpell.type] = Time.time;
-			selectedSpell.Fire2();
+			if (SelectedSpell == null) return;
+			if (lastShotTimes[SelectedSpell.type] + SelectedSpell.cooldown > Time.time) return;
+			lastShotTimes[SelectedSpell.type] = Time.time;
+			SelectedSpell.Fire();
+		}
+
+		public void StartFiring() {
+			isFiring = true;
+			if (SelectedSpell.isToggle && lastShotTimes[SelectedSpell.type] + SelectedSpell.cooldown <= Time.time) {
+				lastShotTimes[SelectedSpell.type] = Time.time;
+				SelectedSpell.Activate();
+			}
+		}
+
+		public void StopFiring() {
+			isFiring = false;
+			if (SelectedSpell.isToggle) {
+				SelectedSpell.Deactivate();
+			}
 		}
 
 		public void SelectSpell(Spell spell) {
-			selectedSpell = spell;
+			if (SelectedSpell != null && SelectedSpell.isToggle && SelectedSpell.IsActive) {
+				SelectedSpell.Deactivate();
+			}
+			SelectedSpell = spell;
 		}
+
+		private void Update() {
+			SelectedSpell.Update();
+			if (isFiring && !SelectedSpell.isToggle) {
+				FireSpell();
+			}
+			PerformUpdate();
+		}
+
+		protected abstract void PerformUpdate();
 
 	}
 }

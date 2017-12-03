@@ -4,7 +4,7 @@ namespace LD40 {
 	public class FireballProjectile : Projectile {
 
 		protected override void Init() {
-			
+
 		}
 
 		protected override Vector3 GetVelocity() {

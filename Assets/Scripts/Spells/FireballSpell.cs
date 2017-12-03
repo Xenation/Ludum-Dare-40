@@ -20,9 +20,5 @@ namespace LD40 {
 			p3.heading = Quaternion.AngleAxis(45, Vector3.up) * Vector3.forward;
 			AddFactory(p3);
 		}
-
-		public override void Fire() {
-
-		}
 	}
 }
