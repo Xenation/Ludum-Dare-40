@@ -634,6 +634,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114139159621428372, guid: 7a91d4d9ee8b690439af2af2e77d5920,
+        type: 2}
+      propertyPath: genVelDampen
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a91d4d9ee8b690439af2af2e77d5920, type: 2}
   m_IsPrefabParent: 0
