@@ -160,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 1745372143479464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4697266083587264}
   m_Father: {fileID: 4062557049887274}
@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470a311f242440540bfa133574d76c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantStop: 1
 --- !u!114 &114918558611037166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,6 +210,7 @@ MonoBehaviour:
   dieOnCollision: 1
   hasLifeTime: 1
   lifeTime: 3
+  instability: 0
 --- !u!114 &114949358113373896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470a311f242440540bfa133574d76c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantStop: 1
 --- !u!135 &135279596515960676
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -291,7 +294,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1837545877
+  randomSeed: -194143042
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3553,7 +3556,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -28598372
+  randomSeed: -2116724057
   InitialModule:
     serializedVersion: 3
     enabled: 1
