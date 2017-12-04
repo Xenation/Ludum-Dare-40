@@ -50,6 +50,7 @@ namespace LD40 {
 			Anim.SetTrigger("die");
 			Invoke("PostDieAnim", dieDelay);
 			isDying = true;
+			agent.isStopped = true;
 		}
 
 		private void PostDieAnim() {
