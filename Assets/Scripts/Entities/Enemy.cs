@@ -22,7 +22,7 @@ namespace LD40 {
 			agent = GetComponent<NavMeshAgent>();
 			agent.stoppingDistance = stopRange;
 			Target = EntitiesManager.I.player;
-			Anim = GetComponent<Animator>();
+			Anim = GetComponentInChildren<Animator>();
 			InitAI();
 		}
 

@@ -25,9 +25,12 @@ namespace LD40 {
 			}
 		}
 
+		protected virtual void PreSpellFired() { }
+
 		public void FireSpell() {
 			if (SelectedSpell == null) return;
 			if (lastShotTimes[SelectedSpell.type] + SelectedSpell.Cooldown > Time.time) return;
+			PreSpellFired();
 			lastShotTimes[SelectedSpell.type] = Time.time;
 			SelectedSpell.Fire();
 		}
