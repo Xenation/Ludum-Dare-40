@@ -9,6 +9,7 @@ namespace LD40 {
 		}
 
 		protected override void InitFactories() {
+			instantiateDistanceMult = 3f;
 			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.Tornado, Instability);
 			projectile.heading = Vector3.forward;
 			AddFactory(projectile);

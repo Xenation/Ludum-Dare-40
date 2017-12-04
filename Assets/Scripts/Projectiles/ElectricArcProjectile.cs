@@ -7,6 +7,8 @@ namespace LD40 {
 		public float angle;
 		public float range;
 
+		public float centerDeadAngle = 10f;
+
 		protected override void Init() {
 			transform.LookAt(transform.position + heading);
 		}

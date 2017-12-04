@@ -12,13 +12,15 @@ namespace LD40 {
 		public EletricArcSpell eletricArcSpell;
 		public BeamSpell beamSpell;
 
-		private List<Spell> spells;
+		public List<Spell> spells;
 
 		public void OnEnable() {
 			spells = new List<Spell>();
 			foreach (FieldInfo field in GetType().GetFields()) {
 				if (!field.IsPublic) continue;
-				spells.Add((Spell) field.GetValue(this));
+				Spell spell = field.GetValue(this) as Spell;
+				if (spell == null) continue;
+				spells.Add(spell);
 			}
 		}
 

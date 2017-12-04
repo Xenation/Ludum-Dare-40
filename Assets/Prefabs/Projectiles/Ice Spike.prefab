@@ -208,10 +208,10 @@ MonoBehaviour:
   hasLifeTime: 0
   lifeTime: 3
   instability: 0
-  minSplitDistance: 5
-  maxSplitDistance: 10
+  minSplitDistance: 3
+  maxSplitDistance: 6
   minSplitAngle: 10
-  maxSplitAngle: 30
+  maxSplitAngle: 20
   maxSplits: 2
   eraticAngle: 10
 --- !u!114 &114949358113373896

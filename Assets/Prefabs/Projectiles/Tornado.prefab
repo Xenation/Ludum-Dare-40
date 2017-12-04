@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33445204399258272}
   - component: {fileID: 135021010057359726}
   - component: {fileID: 23165588952906284}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4189798990848368}
   - component: {fileID: 198932776025074418}
   - component: {fileID: 199797901646091504}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 198163508025617452}
   - component: {fileID: 199087397028065952}
   - component: {fileID: 114850467498256186}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 198742408869272162}
   - component: {fileID: 199377779054754998}
   - component: {fileID: 114257858646978070}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Particle System (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4947685034198054}
   - component: {fileID: 198622188039004060}
   - component: {fileID: 199812854995303522}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4335971792501894}
   - component: {fileID: 54811596553813938}
   - component: {fileID: 114616079638623716}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Tornado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &114257858646978070
 MonoBehaviour:
@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470a311f242440540bfa133574d76c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantStop: 1
 --- !u!114 &114616079638623716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,8 +280,13 @@ MonoBehaviour:
   heading: {x: 0, y: 0, z: 0}
   speed: 10
   dieOnCollision: 1
+  hasLifeTime: 0
   lifeTime: 10
-  buildUpTime: 3
+  instability: 0
+  buildUpTime: 2.5
+  hitRange: 3
+  hitCooldown: 2
+  maxBounces: 2
 --- !u!114 &114850467498256186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470a311f242440540bfa133574d76c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantStop: 1
 --- !u!135 &135021010057359726
 SphereCollider:
   m_ObjectHideFlags: 1

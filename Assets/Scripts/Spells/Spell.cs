@@ -30,16 +30,19 @@ namespace LD40 {
 
 		[SerializeField]
 		private int _instability = 0;
+		private int currentInstability;
 		public int Instability {
 			get {
-				return _instability;
+				return currentInstability;
 			}
 			set {
-				_instability = value;
+				currentInstability = value;
 				ClearFactories();
 				InitFactories();
 			}
 		}
+
+		protected float instantiateDistanceMult = 1f;
 
 		public Spell() {
 			
@@ -47,6 +50,7 @@ namespace LD40 {
 
 		public void Init() {
 			Cooldown = cooldown;
+			currentInstability = _instability;
 			type = GetSpellType();
 			InitFactories();
 		}
@@ -98,7 +102,7 @@ namespace LD40 {
 				Projectile inst = fact.CreateInstance();
 				Vector3 relativeHeading = Quaternion.FromToRotation(Vector3.forward, fact.heading) * heading;
 				inst.heading = relativeHeading;
-				inst.transform.position = position + inst.heading;
+				inst.transform.position = position + inst.heading * instantiateDistanceMult;
 				instantiated.Add(fact, inst);
 			}
 			return instantiated;
