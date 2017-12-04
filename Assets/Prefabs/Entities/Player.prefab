@@ -300,6 +300,7 @@ MonoBehaviour:
   speed: 10
   maxSlope: 20
   gravity: -5
+  dieDelay: 1.2
 --- !u!136 &136292631420199832
 CapsuleCollider:
   m_ObjectHideFlags: 1
