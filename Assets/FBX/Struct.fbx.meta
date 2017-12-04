@@ -10,23 +10,28 @@ ModelImporter:
     100004: Pillar
     100006: Stairs
     100008: //RootNode
+    100010: Grid
     400000: Door
     400002: Door_alt
     400004: Pillar
     400006: Stairs
     400008: //RootNode
+    400010: Grid
     2300000: Door
     2300002: Door_alt
     2300004: Pillar
     2300006: Stairs
+    2300008: Grid
     3300000: Door
     3300002: Door_alt
     3300004: Pillar
     3300006: Stairs
+    3300008: Grid
     4300000: Pillar
     4300002: Stairs
     4300004: Door_alt
     4300006: Door
+    4300008: Grid
   materials:
     importMaterials: 1
     materialName: 0
