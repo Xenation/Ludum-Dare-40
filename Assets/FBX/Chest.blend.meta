@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: a1cadcc048034004490f985398ff413a
-timeCreated: 1512406061
+guid: e3d18ec8bb34c9e4187f6b3985e4de41
+timeCreated: 1512413803
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Bat
-    100004: Bat_Bones
-    100006: Master
-    100008: Wing.L
-    100010: Wing.L_end
-    100012: Wing.R
-    100014: Wing.R_end
+    100002: Chest
+    100004: Chest_Bones
+    100006: Chest_Bot
+    100008: Chest_Top
     400000: //RootNode
-    400002: Bat
-    400004: Bat_Bones
-    400006: Master
-    400008: Wing.L
-    400010: Wing.L_end
-    400012: Wing.R
-    400014: Wing.R_end
-    4300000: Bat
-    7400000: Bat|Walk
-    7400002: Bat_Bones|SlimeAction
+    400002: Chest
+    400004: Chest_Bones
+    400006: Chest_Bot
+    400008: Chest_Top
+    4300000: Chest
+    7400000: Default Take
+    7400002: Open
     9500000: //RootNode
-    13700000: Bat
+    13700000: Chest
   materials:
     importMaterials: 1
     materialName: 0
@@ -33,7 +27,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
@@ -51,8 +45,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Bat|Walk
-      takeName: Bat_Bones|Bat_BonesAction
+      name: Open
+      takeName: Open
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -81,7 +75,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
