@@ -1,31 +1,23 @@
 fileFormatVersion: 2
-guid: a1cadcc048034004490f985398ff413a
-timeCreated: 1512406061
+guid: 14136f734b46ae04e91aa044c64f1a6d
+timeCreated: 1512413267
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Bat
-    100004: Bat_Bones
-    100006: Master
-    100008: Wing.L
-    100010: Wing.L_end
-    100012: Wing.R
-    100014: Wing.R_end
-    400000: //RootNode
-    400002: Bat
-    400004: Bat_Bones
-    400006: Master
-    400008: Wing.L
-    400010: Wing.L_end
-    400012: Wing.R
-    400014: Wing.R_end
-    4300000: Bat
-    7400000: Bat|Walk
-    7400002: Bat_Bones|SlimeAction
+    100000: Master
+    100002: //RootNode
+    100004: Slime
+    100006: Slime_Bones
+    400000: Master
+    400002: //RootNode
+    400004: Slime
+    400006: Slime_Bones
+    4300000: Slime
+    7400000: Default Take
+    7400002: Walk
     9500000: //RootNode
-    13700000: Bat
+    13700000: Slime
   materials:
     importMaterials: 1
     materialName: 0
@@ -51,8 +43,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Bat|Walk
-      takeName: Bat_Bones|Bat_BonesAction
+      name: Walk
+      takeName: Walk
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -61,7 +53,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -81,7 +73,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

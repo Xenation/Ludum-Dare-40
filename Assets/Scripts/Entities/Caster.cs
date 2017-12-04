@@ -5,6 +5,9 @@ namespace LD40 {
 	[HideInInspector]
 	public abstract class Caster : LivingEntity {
 
+		public delegate void OnSpellSelected(SpellType t);
+		public event OnSpellSelected OnSpellSelectedEvent;
+
 		public Spell SelectedSpell { get; private set; }
 
 		public Dictionary<SpellType, float> lastShotTimes;
@@ -22,9 +25,12 @@ namespace LD40 {
 			}
 		}
 
+		protected virtual void PreSpellFired() { }
+
 		public void FireSpell() {
 			if (SelectedSpell == null) return;
 			if (lastShotTimes[SelectedSpell.type] + SelectedSpell.Cooldown > Time.time) return;
+			PreSpellFired();
 			lastShotTimes[SelectedSpell.type] = Time.time;
 			SelectedSpell.Fire();
 		}
@@ -49,6 +55,9 @@ namespace LD40 {
 				SelectedSpell.Deactivate();
 			}
 			SelectedSpell = spell;
+			if (OnSpellSelectedEvent != null) {
+				OnSpellSelectedEvent.Invoke(spell.type);
+			}
 		}
 
 		private void Update() {

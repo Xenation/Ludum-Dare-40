@@ -25,7 +25,7 @@ namespace LD40 {
 		private void Start() {
 			rb = GetComponent<Rigidbody>();
 			SelectSpell(Spell.GetSpell(SpellType.Fireball, this));
-			animator = GetComponent<Animator>();
+			animator = GetComponentInChildren<Animator>();
 		}
 
 		protected override void OnPreTakeDamage() {
@@ -90,7 +90,6 @@ namespace LD40 {
 
 			if (Input.GetButtonDown("Fire1")) {
 				StartFiring();
-				animator.SetTrigger("attack");
 			}
 			if (Input.GetButton("Fire1")) {
 				SelectedSpell.target = target;
@@ -102,6 +101,10 @@ namespace LD40 {
 			if (Input.GetKeyDown("space")) {
 				SpellsManager.I.IncreaseInstability();
 			}
+		}
+
+		protected override void PreSpellFired() {
+			animator.SetTrigger("attack");
 		}
 
 		private void FixedUpdate() {
