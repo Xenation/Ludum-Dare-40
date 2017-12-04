@@ -25,7 +25,7 @@ namespace LD40 {
 		private void Start() {
 			rb = GetComponent<Rigidbody>();
 			SelectSpell(Spell.GetSpell(SpellType.Fireball, this));
-			animator = GetComponent<Animator>();
+			animator = GetComponentInChildren<Animator>();
 		}
 
 		protected override void OnPreTakeDamage() {

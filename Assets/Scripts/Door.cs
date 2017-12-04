@@ -27,7 +27,6 @@ namespace LD40 {
 					curEnemy = cols[i].GetComponentInParent<Enemy>();
 					if (curEnemy != null) {
 						hasEnemies = true;
-						Debug.Log("HAS ENEMIES");
 					}
 				}
 				if (hasEnemies) {

@@ -13,6 +13,10 @@ namespace LD40 {
 			maxHealth = health;
 		}
 
+		public float GetMaxHealth() {
+			return maxHealth;
+		}
+
 		protected virtual void OnPreTakeDamage() { }
 
 		public void TakeDamage(float dmg) {
