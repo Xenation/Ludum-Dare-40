@@ -13,42 +13,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballSpell:
     type: 0
-    cooldown: 0.2
+    cooldown: 1
     isToggle: 0
-    caster: {fileID: 0}
-    projectileFactories: []
-    target: {x: 20.772943, y: 1, z: 3.9112177}
-    mainHeading: {x: 0.9827323, y: -0.0000000056395866, z: 0.1850331}
+    target: {x: 21.819887, y: 1, z: 6.7913027}
+    _instability: 4
+    minCooldown: 0.75
+    maxCooldown: 1.1
   iceSpikeSpell:
     type: 1
     cooldown: 0.5
     isToggle: 0
-    caster: {fileID: 0}
-    projectileFactories: []
-    target: {x: 14.435992, y: 1, z: 11.134887}
-    mainHeading: {x: 0.7918207, y: -0.0000000065386834, z: 0.61075366}
+    target: {x: 13.770874, y: 1, z: 2.9095151}
+    _instability: 2
   tornadoSpell:
     type: 2
     cooldown: 1
     isToggle: 0
-    caster: {fileID: 0}
-    projectileFactories: []
     target: {x: 14.240913, y: 1, z: 11.134887}
-    mainHeading: {x: 0.76017755, y: -0.00000000905895, z: 0.6497155}
+    _instability: 0
   eletricArcSpell:
     type: 3
     cooldown: 1
     isToggle: 0
-    caster: {fileID: 0}
-    projectileFactories: []
     target: {x: -8.063328, y: 1, z: 6.274035}
-    mainHeading: {x: -0.27572533, y: 0, z: 0.9612365}
+    _instability: 0
   beamSpell:
     type: 4
     cooldown: 1
     isToggle: 1
-    caster: {fileID: 0}
-    projectileFactories: []
     target: {x: -23.237442, y: 1, z: 12.340582}
-    mainHeading: {x: -0.88318324, y: -0.000000004530775, z: 0.4690281}
+    _instability: 0
     castTime: 0.5

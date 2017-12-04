@@ -8,7 +8,7 @@ namespace LD40 {
 			return SpellType.Tornado;
 		}
 
-		public override void InitFactories() {
+		protected override void InitFactories() {
 			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.Tornado, Instability);
 			projectile.heading = Vector3.forward;
 			AddFactory(projectile);

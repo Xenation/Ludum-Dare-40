@@ -12,7 +12,7 @@ namespace LD40 {
 			return SpellType.Fireball;
 		}
 
-		public override void InitFactories() {
+		protected override void InitFactories() {
 			ProjectileFactory p1, p2, p3;
 			switch (Instability) {
 				default:

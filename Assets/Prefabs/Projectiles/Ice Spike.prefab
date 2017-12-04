@@ -205,7 +205,15 @@ MonoBehaviour:
   heading: {x: 0, y: 0, z: 0}
   speed: 20
   dieOnCollision: 1
+  hasLifeTime: 0
   lifeTime: 3
+  instability: 0
+  minSplitDistance: 5
+  maxSplitDistance: 10
+  minSplitAngle: 10
+  maxSplitAngle: 30
+  maxSplits: 2
+  eraticAngle: 10
 --- !u!114 &114949358113373896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470a311f242440540bfa133574d76c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantStop: 1
 --- !u!135 &135279596515960676
 SphereCollider:
   m_ObjectHideFlags: 1

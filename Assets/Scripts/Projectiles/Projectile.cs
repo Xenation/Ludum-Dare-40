@@ -54,6 +54,10 @@ namespace LD40 {
 		protected abstract void UpdatePhysics();
 
 		private void OnCollisionEnter(Collision collision) {
+			OnCollision(collision);
+		}
+
+		protected virtual void OnCollision(Collision collision) {
 			LivingEntity entity = collision.gameObject.GetComponent<LivingEntity>();
 			if (entity != null) {
 				InflictDamage(entity);

@@ -42,12 +42,17 @@ namespace LD40 {
 		}
 
 		public Spell() {
+			
+		}
+
+		public void Init() {
 			Cooldown = cooldown;
 			type = GetSpellType();
+			InitFactories();
 		}
 
 		public abstract SpellType GetSpellType();
-		public abstract void InitFactories();
+		protected abstract void InitFactories();
 
 		public void ClearFactories() {
 			projectileFactories.Clear();

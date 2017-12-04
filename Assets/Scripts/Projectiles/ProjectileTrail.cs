@@ -19,7 +19,6 @@ namespace LD40 {
 
 		private void Update() {
 			if (isDying && system.particleCount == 0) {
-				Debug.Log("No particles");
 				Die();
 			}
 		}

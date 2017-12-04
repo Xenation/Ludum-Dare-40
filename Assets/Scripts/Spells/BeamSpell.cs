@@ -13,7 +13,7 @@ namespace LD40 {
 			return SpellType.Beam;
 		}
 
-		public override void InitFactories() {
+		protected override void InitFactories() {
 			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.Beam, Instability);
 			projectile.heading = Vector3.forward;
 			AddFactory(projectile);

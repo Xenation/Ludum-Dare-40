@@ -35,9 +35,9 @@ namespace LD40 {
 			return null;
 		}
 
-		public void InitAllFactories() {
+		public void InitAll() {
 			foreach (Spell spell in spells) {
-				spell.InitFactories();
+				spell.Init();
 			}
 		}
 

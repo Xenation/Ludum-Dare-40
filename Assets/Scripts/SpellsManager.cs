@@ -2,7 +2,7 @@
 	public class SpellsManager : Singleton<SpellsManager> {
 
 		public void Awake() {
-			DataCenter.I.playerSpells.InitAllFactories();
+			DataCenter.I.playerSpells.InitAll();
 		}
 
 		public void OnDestroy() {

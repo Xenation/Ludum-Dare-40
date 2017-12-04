@@ -8,7 +8,7 @@ namespace LD40 {
 			return SpellType.ElectricArc;
 		}
 
-		public override void InitFactories() {
+		protected override void InitFactories() {
 			ProjectileFactory projectile = ProjectileFactory.CreateFactory(ProjectileType.ElectricArc, Instability);
 			projectile.heading = Vector3.forward;
 			AddFactory(projectile);
