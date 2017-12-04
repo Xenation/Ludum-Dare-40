@@ -240,26 +240,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224577757399060616, guid: 4379bc61774228d448fd3b8ffd91d9f2,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 224577757399060616, guid: 4379bc61774228d448fd3b8ffd91d9f2,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 224577757399060616, guid: 4379bc61774228d448fd3b8ffd91d9f2,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 224577757399060616, guid: 4379bc61774228d448fd3b8ffd91d9f2,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -10
-      objectReference: {fileID: 0}
     - target: {fileID: 224894136467364936, guid: 4379bc61774228d448fd3b8ffd91d9f2,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -409,6 +389,11 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047739981623228, guid: 4379bc61774228d448fd3b8ffd91d9f2,
+        type: 2}
+      propertyPath: gameOverDelay
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4379bc61774228d448fd3b8ffd91d9f2, type: 2}

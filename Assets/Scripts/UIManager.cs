@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace LD40 {
@@ -15,6 +16,9 @@ namespace LD40 {
 		public Color selectedTint;
 		public Color unselectedTint;
 
+		public GameObject gameOverRoot;
+		public float gameOverDelay;
+
 		private Player player;
 
 		private SpellIcon[] icons;
@@ -26,7 +30,11 @@ namespace LD40 {
 		public void Start() {
 			player = EntitiesManager.I.player;
 			player.OnSpellSelectedEvent += OnSpellSelected;
+			player.OnDeathEvent += OnPlayerDeath;
 			healthSlider.maxValue = player.GetMaxHealth();
+			if (gameOverRoot.activeSelf) {
+				gameOverRoot.SetActive(false);
+			}
 		}
 
 		private void FillIconsArray() {
@@ -50,6 +58,15 @@ namespace LD40 {
 					icon.Unselect();
 				}
 			}
+		}
+
+		private void OnPlayerDeath() {
+			gameOverRoot.SetActive(true);
+			Invoke("ReloadScene", gameOverDelay);
+		}
+
+		private void ReloadScene() {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
 
 	}

@@ -14,7 +14,7 @@ namespace LD40 {
 		}
 
 		public void FixedUpdate() {
-			if (follow) {
+			if (follow && toFollow != null) {
 				transform.position = Vector3.Lerp(transform.position, toFollow.position + offset, Time.deltaTime * lerpMult);
 			}
 		}
