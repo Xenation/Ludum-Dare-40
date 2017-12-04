@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  range: 20
+  range: 10
   stopRange: 2
   dieDelay: 0.65
 --- !u!114 &114901573042578830
