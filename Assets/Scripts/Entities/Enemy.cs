@@ -15,6 +15,8 @@ namespace LD40 {
 
 		public Animator Anim { get; private set; }
 
+		private bool isDying = false;
+
 		private void Start() {
 			SeesTarget = false;
 			agent = GetComponent<NavMeshAgent>();
@@ -25,7 +27,7 @@ namespace LD40 {
 		}
 
 		public void Update() {
-			if (Target == null) return;
+			if (isDying || Target == null) return;
 			RaycastHit hit;
 			if (Physics.Raycast(transform.position, (Target.transform.position - transform.position).normalized, out hit, range, 1 << LayerMask.NameToLayer("Player"))) {
 				lastTargetPosition = Target.transform.position;
@@ -47,6 +49,7 @@ namespace LD40 {
 			// TODO take in account a delay for anim
 			Anim.SetTrigger("die");
 			Invoke("PostDieAnim", dieDelay);
+			isDying = true;
 		}
 
 		private void PostDieAnim() {
