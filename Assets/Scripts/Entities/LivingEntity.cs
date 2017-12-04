@@ -17,10 +17,10 @@ namespace LD40 {
 			return maxHealth;
 		}
 
-		protected virtual void OnPreTakeDamage() { }
+		protected virtual void OnPreTakeDamage(Vector3 hitDir, float dmg) { }
 
-		public void TakeDamage(float dmg) {
-			OnPreTakeDamage();
+		public void TakeDamage(Vector3 hitDir, float dmg) {
+			OnPreTakeDamage(hitDir, dmg);
 			health -= dmg;
 			if (health <= 0f) {
 				health = 0f;

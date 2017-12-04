@@ -42,7 +42,7 @@ namespace LD40 {
 		}
 
 		protected override void InflictDamage(LivingEntity entity) {
-			entity.TakeDamage(damage);
+			entity.TakeDamage(heading, damage);
 		}
 
 		protected override void OnPreDeath() {
