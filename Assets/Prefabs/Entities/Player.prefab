@@ -407,7 +407,7 @@ Transform:
   - {fileID: 4189892115303554}
   - {fileID: 4283072775537796}
   m_Father: {fileID: 4995344663097830}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4279883625899604
 Transform:
@@ -516,7 +516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4995344663097830}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4746797995057878
 Transform:
@@ -595,8 +595,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4252812759316722}
   - {fileID: 4599192663703172}
+  - {fileID: 4252812759316722}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -645,9 +645,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 4
-  maxSlope: 20
+  maxSlope: 50
   gravity: -5
   dieDelay: 1.2
+  hasControl: 1
 --- !u!136 &136292631420199832
 CapsuleCollider:
   m_ObjectHideFlags: 1

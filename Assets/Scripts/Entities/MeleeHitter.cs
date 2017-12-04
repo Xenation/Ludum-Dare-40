@@ -27,7 +27,7 @@ namespace LD40 {
 			// TODO take in account anim
 			enemy.Anim.SetTrigger("attack");
 			foreach (LivingEntity ent in hitCollider.EntitiesInside) {
-				ent.TakeDamage(damage);
+				ent.TakeDamage((ent.transform.position - transform.position).normalized, damage);
 			}
 		}
 

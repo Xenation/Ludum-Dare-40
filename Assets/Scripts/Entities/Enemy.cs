@@ -17,6 +17,11 @@ namespace LD40 {
 
 		private bool isDying = false;
 
+		public float knockbackMult = 5f;
+		public float genVelDampen = 6f;
+
+		private Vector3 genVel = Vector3.zero;
+
 		private void Start() {
 			SeesTarget = false;
 			agent = GetComponent<NavMeshAgent>();
@@ -42,6 +47,16 @@ namespace LD40 {
 			Anim.SetFloat("speed", agent.velocity.magnitude);
 			//UpdateAI();
 			SendMessage("UpdateAI");
+		}
+
+		private void FixedUpdate() {
+			//agent.velocity += genVel * Time.fixedDeltaTime;
+			//genVel -= genVel * genVelDampen * Time.fixedDeltaTime;
+		}
+
+		protected override void OnPreTakeDamage(Vector3 hitDir, float dmg) {
+			//genVel = hitDir * knockbackMult;
+			agent.velocity = hitDir * knockbackMult;
 		}
 
 		protected override void Die() {

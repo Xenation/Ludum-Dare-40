@@ -10,6 +10,8 @@ namespace LD40 {
 		public float maxSlope = 45f;
 		public float gravity = -5f;
 		public float dieDelay = 1.2f;
+		public float knockMult = 5f;
+		public float genVelDampen = 4f;
 
 		[HideInInspector]
 		public bool hasControl = true;
@@ -20,6 +22,7 @@ namespace LD40 {
 		private Vector3 groundNormal = Vector3.up;
 		private Vector3 horizTangent = Vector3.right;
 		private Vector3 vertTangent = Vector3.forward;
+		private Vector3 genVel = Vector3.zero;
 
 		private Vector3 target;
 
@@ -31,7 +34,8 @@ namespace LD40 {
 			animator = GetComponentInChildren<Animator>();
 		}
 
-		protected override void OnPreTakeDamage() {
+		protected override void OnPreTakeDamage(Vector3 hitDir, float dmg) {
+			genVel += hitDir * knockMult;
 			animator.SetTrigger("hit");
 		}
 
@@ -123,7 +127,8 @@ namespace LD40 {
 			if (!isGrounded) {
 				vel.y += gravity;
 			}
-			rb.velocity = vel;
+			rb.velocity = vel + genVel;
+			genVel -= genVel * genVelDampen * Time.fixedDeltaTime;
 		}
 
 		private void OnCollisionEnter(Collision collision) {
