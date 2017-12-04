@@ -5,15 +5,18 @@ namespace LD40 {
 
 		public Transform toFollow;
 		public float lerpMult = 1f;
+		public bool follow = true;
 
-		private Vector3 offset;
+		private Vector3 offset = new Vector3(0, 9.57f, -4.17f);
 
 		public void Start() {
-			offset = transform.position - toFollow.position;
+			//offset = transform.position - toFollow.position;
 		}
 
-		public void LateUpdate() {
-			transform.position = Vector3.Lerp(transform.position, toFollow.position + offset, Time.deltaTime * lerpMult);
+		public void FixedUpdate() {
+			if (follow) {
+				transform.position = Vector3.Lerp(transform.position, toFollow.position + offset, Time.deltaTime * lerpMult);
+			}
 		}
 
 	}

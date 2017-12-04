@@ -12,7 +12,7 @@ namespace LD40 {
 
 		public Dictionary<SpellType, float> lastShotTimes;
 
-		private bool isFiring = false;
+		protected bool isFiring = false;
 
 		public Caster() {
 			InitShotTimes();

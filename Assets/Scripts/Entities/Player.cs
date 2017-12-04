@@ -11,6 +11,9 @@ namespace LD40 {
 		public float gravity = -5f;
 		public float dieDelay = 1.2f;
 
+		[HideInInspector]
+		public bool hasControl = true;
+
 		private Rigidbody rb;
 		private Vector3 vel = Vector3.zero;
 		private bool isGrounded = false;
@@ -44,6 +47,15 @@ namespace LD40 {
 		}
 
 		protected override void PerformUpdate() {
+			if (!hasControl) {
+				vel = Vector3.zero;
+				animator.SetFloat("speed", 0f);
+				if (isFiring) {
+					StopFiring();
+				}
+				return;
+			}
+
 			// Movement
 			if (!isGrounded) {
 				horizTangent = Vector3.right;

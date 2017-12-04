@@ -5,7 +5,6 @@ namespace LD40 {
 
 		public Vector3[] points;
 		public float patrolStopRange;
-		public float waitTime;
 
 		protected override void InitAI() {
 			agent.stoppingDistance = patrolStopRange;
