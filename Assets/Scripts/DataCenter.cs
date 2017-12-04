@@ -7,6 +7,9 @@ namespace LD40 {
 		private static DataCenter instance;
 		public static DataCenter I {
 			get {
+				if (instance == null) {
+					instance = Resources.FindObjectsOfTypeAll<DataCenter>()[0];
+				}
 				return instance;
 			}
 		}

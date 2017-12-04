@@ -8,7 +8,6 @@ namespace LD40 {
 		public Spell SelectedSpell { get; private set; }
 
 		public Dictionary<SpellType, float> lastShotTimes;
-		private Dictionary<SpellType, bool> activeSpells;
 
 		private bool isFiring = false;
 
@@ -20,13 +19,6 @@ namespace LD40 {
 			lastShotTimes = new Dictionary<SpellType, float>();
 			foreach (SpellType type in System.Enum.GetValues(typeof(SpellType))) {
 				lastShotTimes.Add(type, 0f);
-			}
-		}
-
-		public void InitActiveSpells() {
-			activeSpells = new Dictionary<SpellType, bool>();
-			foreach (SpellType type in System.Enum.GetValues(typeof(SpellType))) {
-				activeSpells.Add(type, false);
 			}
 		}
 

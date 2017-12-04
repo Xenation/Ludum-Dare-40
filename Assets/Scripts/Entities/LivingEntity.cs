@@ -7,6 +7,11 @@ namespace LD40 {
 		public event OnDeath OnDeathEvent;
 
 		public float health = 10f;
+		private float maxHealth;
+
+		private void Awake() {
+			maxHealth = health;
+		}
 
 		protected virtual void OnPreTakeDamage() { }
 
@@ -18,6 +23,16 @@ namespace LD40 {
 				Die();
 			} else {
 				// TODO Take in account anim
+			}
+		}
+
+		protected virtual void OnPreHeal() { }
+
+		public void Heal(float h) {
+			OnPreHeal();
+			health += h;
+			if (health > maxHealth) {
+				health = maxHealth;
 			}
 		}
 
