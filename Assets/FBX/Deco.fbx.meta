@@ -17,6 +17,7 @@ ModelImporter:
     100018: Table
     100020: Torch_Light
     100022: Torch_Off
+    100024: Coin
     400000: Banner
     400002: Barrel
     400004: Candle
@@ -29,6 +30,7 @@ ModelImporter:
     400018: Table
     400020: Torch_Light
     400022: Torch_Off
+    400024: Coin
     2300000: Banner
     2300002: Barrel
     2300004: Candle
@@ -40,6 +42,7 @@ ModelImporter:
     2300016: Table
     2300018: Torch_Light
     2300020: Torch_Off
+    2300022: Coin
     3300000: Banner
     3300002: Barrel
     3300004: Candle
@@ -51,6 +54,7 @@ ModelImporter:
     3300016: Table
     3300018: Torch_Light
     3300020: Torch_Off
+    3300022: Coin
     4300000: Torch_Off
     4300002: Banner
     4300004: Chair
@@ -62,6 +66,7 @@ ModelImporter:
     4300016: Torch_Light
     4300018: Crate
     4300020: Barrel
+    4300022: Coin
   materials:
     importMaterials: 1
     materialName: 0
