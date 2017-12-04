@@ -6,21 +6,26 @@ namespace LD40 {
 		
 		public float range;
 		public float stopRange;
+		public float dieDelay = 1.2f;
 
 		protected NavMeshAgent agent;
 		public Caster Target { get; protected set; }
 		protected Vector3 lastTargetPosition;
 		public bool SeesTarget { get; protected set; }
 
+		public Animator Anim { get; private set; }
+
 		private void Start() {
 			SeesTarget = false;
 			agent = GetComponent<NavMeshAgent>();
 			agent.stoppingDistance = stopRange;
 			Target = EntitiesManager.I.player;
+			Anim = GetComponent<Animator>();
 			InitAI();
 		}
 
 		public void Update() {
+			if (Target == null) return;
 			RaycastHit hit;
 			if (Physics.Raycast(transform.position, (Target.transform.position - transform.position).normalized, out hit, range, 1 << LayerMask.NameToLayer("Player"))) {
 				lastTargetPosition = Target.transform.position;
@@ -32,6 +37,7 @@ namespace LD40 {
 				SeesTarget = false;
 				TargetLost();
 			}
+			Anim.SetFloat("speed", agent.velocity.magnitude);
 			//UpdateAI();
 			SendMessage("UpdateAI");
 		}
@@ -39,6 +45,11 @@ namespace LD40 {
 		protected override void Die() {
 			TriggerDeathEvent();
 			// TODO take in account a delay for anim
+			Anim.SetTrigger("die");
+			Invoke("PostDieAnim", dieDelay);
+		}
+
+		private void PostDieAnim() {
 			Destroy(gameObject);
 		}
 

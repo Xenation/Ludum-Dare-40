@@ -58,7 +58,7 @@ namespace LD40 {
 		}
 
 		protected virtual void OnCollision(Collision collision) {
-			LivingEntity entity = collision.gameObject.GetComponent<LivingEntity>();
+			LivingEntity entity = collision.gameObject.GetComponentInParent<LivingEntity>();
 			if (entity != null) {
 				InflictDamage(entity);
 			}

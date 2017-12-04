@@ -9,7 +9,7 @@ namespace LD40 {
 			Collider[] colliders = Physics.OverlapCapsule(origin, origin + heading * maxRange, width);
 			LivingEntity cur;
 			for (int i = 0; i < colliders.Length; i++) {
-				cur = colliders[i].GetComponent<LivingEntity>();
+				cur = colliders[i].GetComponentInParent<LivingEntity>();
 				if (cur != null && !inside.Contains(cur)) inside.Add(cur);
 			}
 			return inside;
@@ -31,7 +31,7 @@ namespace LD40 {
 			Collider[] colliders = Physics.OverlapSphere(center, range);
 			LivingEntity cur;
 			for (int i = 0; i < colliders.Length; i++) {
-				cur = colliders[i].GetComponent<LivingEntity>();
+				cur = colliders[i].GetComponentInParent<LivingEntity>();
 				if (cur != null && !inside.Contains(cur)) inside.Add(cur);
 			}
 			return inside;

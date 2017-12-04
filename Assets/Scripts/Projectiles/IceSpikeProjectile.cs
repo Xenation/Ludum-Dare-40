@@ -45,7 +45,7 @@ namespace LD40 {
 		}
 
 		protected override void OnCollision(Collision collision) {
-			LivingEntity entity = collision.gameObject.GetComponent<LivingEntity>();
+			LivingEntity entity = collision.gameObject.GetComponentInParent<LivingEntity>();
 			if (entity != null) {
 				if (!entitiesTouched.Contains(entity)) {
 					InflictDamage(entity);

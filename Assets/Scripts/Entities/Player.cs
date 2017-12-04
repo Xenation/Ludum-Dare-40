@@ -9,6 +9,7 @@ namespace LD40 {
 		public float speed = 5f;
 		public float maxSlope = 45f;
 		public float gravity = -5f;
+		public float dieDelay = 1.2f;
 
 		private Rigidbody rb;
 		private Vector3 vel = Vector3.zero;
@@ -19,14 +20,26 @@ namespace LD40 {
 
 		private Vector3 target;
 
+		private Animator animator;
+
 		private void Start() {
 			rb = GetComponent<Rigidbody>();
 			SelectSpell(Spell.GetSpell(SpellType.Fireball, this));
+			animator = GetComponent<Animator>();
+		}
+
+		protected override void OnPreTakeDamage() {
+			animator.SetTrigger("hit");
 		}
 
 		protected override void Die() {
 			TriggerDeathEvent();
 			// TODO take in account Gameover and anim
+			animator.SetTrigger("die");
+			Invoke("PostDieAnim", dieDelay);
+		}
+
+		private void PostDieAnim() {
 			Destroy(gameObject);
 		}
 
@@ -41,6 +54,7 @@ namespace LD40 {
 			vel = horizTangent * Input.GetAxisRaw("Horizontal") + vertTangent * Input.GetAxisRaw("Vertical");
 			vel.Normalize();
 			vel *= speed;
+			animator.SetFloat("speed", vel.magnitude);
 
 			// Heading
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -76,6 +90,7 @@ namespace LD40 {
 
 			if (Input.GetButtonDown("Fire1")) {
 				StartFiring();
+				animator.SetTrigger("attack");
 			}
 			if (Input.GetButton("Fire1")) {
 				SelectedSpell.target = target;

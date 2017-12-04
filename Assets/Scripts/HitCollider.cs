@@ -12,14 +12,14 @@ namespace LD40 {
 		}
 
 		public void OnTriggerEnter(Collider other) {
-			LivingEntity entity = other.GetComponent<LivingEntity>();
+			LivingEntity entity = other.GetComponentInParent<LivingEntity>();
 			if (entity == null) return;
 			EntitiesInside.Add(entity);
 			HasEntitiesInside = true;
 		}
 
 		public void OnTriggerExit(Collider other) {
-			LivingEntity entity = other.GetComponent<LivingEntity>();
+			LivingEntity entity = other.GetComponentInParent<LivingEntity>();
 			if (entity == null) return;
 			EntitiesInside.Remove(entity);
 			if (EntitiesInside.Count == 0) {

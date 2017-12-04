@@ -8,7 +8,10 @@ namespace LD40 {
 
 		public float health = 10f;
 
+		protected virtual void OnPreTakeDamage() { }
+
 		public void TakeDamage(float dmg) {
+			OnPreTakeDamage();
 			health -= dmg;
 			if (health <= 0f) {
 				health = 0f;

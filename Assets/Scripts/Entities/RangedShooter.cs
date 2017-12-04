@@ -24,6 +24,7 @@ namespace LD40 {
 		public void Shoot(Vector3 target, Vector3 spawnPoint) {
 			if (lastShotTime + cooldown > Time.time) return;
 			lastShotTime = Time.time;
+			enemy.Anim.SetTrigger("attack");
 			Projectile proj = projectileFactory.CreateInstance();
 			proj.heading = (target - transform.position).normalized;
 			proj.transform.position = spawnPoint;

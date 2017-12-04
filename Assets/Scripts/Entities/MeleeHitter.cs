@@ -25,6 +25,7 @@ namespace LD40 {
 			if (lastHitTime + cooldown > Time.time) return;
 			lastHitTime = Time.time;
 			// TODO take in account anim
+			enemy.Anim.SetTrigger("attack");
 			foreach (LivingEntity ent in hitCollider.EntitiesInside) {
 				ent.TakeDamage(damage);
 			}
