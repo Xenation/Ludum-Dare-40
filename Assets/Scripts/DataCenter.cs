@@ -16,6 +16,7 @@ namespace LD40 {
 
 		public void OnEnable() {
 			instance = this;
+
 		}
 
 	}
