@@ -1,71 +1,69 @@
 fileFormatVersion: 2
-guid: f52c791f2e7e58846ab3403d2bec5026
-timeCreated: 1512404268
+guid: f8f64d8f0db6fad4da03fd1aa00cb83f
+timeCreated: 1512412729
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: Arm.L
-    100002: Arm.L 1
-    100004: Arm.R
-    100006: Arm.R 1
-    100008: Clavicle.L
-    100010: Clavicle.R
-    100012: Hand.L
-    100014: Hand.L 1
-    100016: Hand.L_end
-    100018: Hand.R
-    100020: Hand.R_end
-    100022: Hat
-    100024: Head
-    100026: Head_end
-    100028: Hip
-    100030: Master
-    100032: Robe
-    100034: Root
-    100036: Root_end
-    100038: Sorcerer
-    100040: //RootNode
-    100042: Staff
-    400000: Arm.L
-    400002: Arm.L 1
-    400004: Arm.R
-    400006: Arm.R 1
-    400008: Clavicle.L
-    400010: Clavicle.R
-    400012: Hand.L
-    400014: Hand.L 1
-    400016: Hand.L_end
-    400018: Hand.R
-    400020: Hand.R_end
-    400022: Hat
-    400024: Head
-    400026: Head_end
-    400028: Hip
-    400030: Master
-    400032: Robe
-    400034: Root
-    400036: Root_end
-    400038: Sorcerer
-    400040: //RootNode
-    400042: Staff
-    4300000: Hand.L
-    4300002: Robe
-    4300004: Arm.L
-    4300006: Arm.R
-    4300008: Staff
-    4300010: Hat
-    7400000: Sorcerer|Walk
-    7400002: Sorcerer|SlimeAction
-    7400004: Sorcerer|Attack
-    7400006: Sorcerer|Idle
+    100000: Arm_L
+    100002: Arm_R
+    100004: Feet_L
+    100006: Feet_R
+    100008: Hand_L
+    100010: Hand_R
+    100012: Head
+    100014: Hip
+    100016: Leg_L
+    100018: Leg_R
+    100020: Master
+    100022: PL_Arm_L
+    100024: PL_Arm_R
+    100026: PL_Leg_L
+    100028: PL_Leg_R
+    100030: Shoulder_L
+    100032: Shoulder_R
+    100034: //RootNode
+    100036: Skeleton_Bones
+    100038: Skull
+    100040: TG_Arm_L
+    100042: TG_Arm_R
+    100044: TG_Feet_L
+    100046: TG_Feet_R
+    400000: Arm_L
+    400002: Arm_R
+    400004: Feet_L
+    400006: Feet_R
+    400008: Hand_L
+    400010: Hand_R
+    400012: Head
+    400014: Hip
+    400016: Leg_L
+    400018: Leg_R
+    400020: Master
+    400022: PL_Arm_L
+    400024: PL_Arm_R
+    400026: PL_Leg_L
+    400028: PL_Leg_R
+    400030: Shoulder_L
+    400032: Shoulder_R
+    400034: //RootNode
+    400036: Skeleton_Bones
+    400038: Skull
+    400040: TG_Arm_L
+    400042: TG_Arm_R
+    400044: TG_Feet_L
+    400046: TG_Feet_R
+    4300000: Skull
+    7400000: Default Take
+    7400002: Attack_Bow_
+    7400004: Attack_Sword_
+    7400006: Death
+    7400008: Idle
+    7400010: Walk
+    7400012: Attack_Bow
+    7400014: Attack_Sword
     9500000: //RootNode
-    13700000: Arm.L
-    13700002: Arm.R
-    13700004: Hand.L
-    13700006: Hat
-    13700008: Robe
-    13700010: Staff
+    13700000: Skull
   materials:
     importMaterials: 1
     materialName: 0
@@ -91,8 +89,36 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Sorcerer|Walk
-      takeName: Sorcerer|ArmatureAction
+      name: Attack_Bow
+      takeName: Attack_Bow
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack_Sword
+      takeName: Attack_Sword
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -119,10 +145,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Sorcerer|Attack
-      takeName: Sorcerer|ArmatureAction
-      firstFrame: 30
-      lastFrame: 59
+      name: Death
+      takeName: Death
+      firstFrame: 0
+      lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -147,10 +173,38 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Sorcerer|Idle
-      takeName: Sorcerer|ArmatureAction
-      firstFrame: 60
-      lastFrame: 89
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 0
+      lastFrame: 32
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -194,7 +248,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
