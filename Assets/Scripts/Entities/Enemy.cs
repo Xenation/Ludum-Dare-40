@@ -28,6 +28,12 @@ namespace LD40 {
 			agent.stoppingDistance = stopRange;
 			Target = EntitiesManager.I.player;
 			Anim = GetComponentInChildren<Animator>();
+			if (Anim == null) {
+				Debug.Log("NULL ANIM");
+			}
+			if (agent == null) {
+				Debug.Log("NULL AGENT");
+			}
 			InitAI();
 		}
 
