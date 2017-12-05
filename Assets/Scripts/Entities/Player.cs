@@ -91,16 +91,16 @@ namespace LD40 {
 			if (Input.GetButton("Select Spell 1")) {
 				SelectSpell(Spell.GetSpell(SpellType.Fireball, this));
 			}
-			if (Input.GetButton("Select Spell 2")) {
+			if (Input.GetButton("Select Spell 2") && SpellsManager.I.generalInstability > 0) {
 				SelectSpell(Spell.GetSpell(SpellType.IceSpike, this));
 			}
-			if (Input.GetButton("Select Spell 3")) {
+			if (Input.GetButton("Select Spell 3") && SpellsManager.I.generalInstability > 1) {
 				SelectSpell(Spell.GetSpell(SpellType.ElectricArc, this));
 			}
-			if (Input.GetButton("Select Spell 4")) {
+			if (Input.GetButton("Select Spell 4") && SpellsManager.I.generalInstability > 2) {
 				SelectSpell(Spell.GetSpell(SpellType.Tornado, this));
 			}
-			if (Input.GetButton("Select Spell 5")) {
+			if (Input.GetButton("Select Spell 5") && SpellsManager.I.generalInstability > 3) {
 				SelectSpell(Spell.GetSpell(SpellType.Beam, this));
 			}
 
