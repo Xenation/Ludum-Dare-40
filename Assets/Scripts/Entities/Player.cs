@@ -35,7 +35,7 @@ namespace LD40 {
 		}
 
 		protected override void OnPreTakeDamage(Vector3 hitDir, float dmg) {
-			genVel += hitDir * knockMult;
+			genVel = hitDir * knockMult;
 			animator.SetTrigger("hit");
 		}
 
