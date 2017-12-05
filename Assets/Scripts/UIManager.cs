@@ -19,6 +19,10 @@ namespace LD40 {
 		public GameObject gameOverRoot;
 		public float gameOverDelay;
 
+		public bool displayNewSpell;
+		public float newSpellDuration;
+		public GameObject newSpellRoot;
+
 		private Player player;
 
 		private SpellIcon[] icons;
@@ -35,6 +39,14 @@ namespace LD40 {
 			if (gameOverRoot.activeSelf) {
 				gameOverRoot.SetActive(false);
 			}
+			if (displayNewSpell) {
+				newSpellRoot.SetActive(true);
+				Invoke("EndNewSpell", newSpellDuration);
+			}
+		}
+
+		private void EndNewSpell() {
+			newSpellRoot.SetActive(false);
 		}
 
 		private void FillIconsArray() {
