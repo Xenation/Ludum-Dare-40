@@ -458,6 +458,7 @@ MonoBehaviour:
   selectedTint: {r: 1, g: 1, b: 1, a: 1}
   unselectedTint: {r: 0.625, g: 0.625, b: 0.625, a: 1}
   gameOverRoot: {fileID: 1007136760787316}
+  gameOverDelay: 2
 --- !u!114 &114081680175939778
 MonoBehaviour:
   m_ObjectHideFlags: 1
