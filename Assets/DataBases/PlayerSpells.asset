@@ -15,27 +15,27 @@ MonoBehaviour:
     type: 0
     cooldown: 1
     isToggle: 0
-    target: {x: 21.126146, y: 1, z: 0.36053833}
+    target: {x: 3.7202692, y: 1, z: 28.185308}
     _instability: 0
     minCooldown: 0.75
     maxCooldown: 1.1
   iceSpikeSpell:
     type: 1
-    cooldown: 0.5
+    cooldown: 1.5
     isToggle: 0
-    target: {x: 24.43226, y: 1, z: 8.835162}
+    target: {x: 51.98192, y: 0, z: 100.51348}
     _instability: 0
   tornadoSpell:
     type: 2
-    cooldown: 1
+    cooldown: 2
     isToggle: 0
-    target: {x: 20.648775, y: 1, z: -0.9097653}
+    target: {x: -2.2383945, y: 1, z: -1.6332525}
     _instability: 0
   eletricArcSpell:
     type: 3
-    cooldown: 1
+    cooldown: 1.5
     isToggle: 0
-    target: {x: 20.648775, y: 1, z: -0.9097653}
+    target: {x: 4.054328, y: 1, z: 33.439323}
     _instability: 0
     doubleAngle: 45
   beamSpell:
