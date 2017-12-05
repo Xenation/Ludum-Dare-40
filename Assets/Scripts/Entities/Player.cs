@@ -113,10 +113,6 @@ namespace LD40 {
 			if (Input.GetButtonUp("Fire1")) {
 				StopFiring();
 			}
-
-			if (Input.GetKeyDown("space")) {
-				SpellsManager.I.IncreaseInstability();
-			}
 		}
 
 		protected override void PreSpellFired() {
